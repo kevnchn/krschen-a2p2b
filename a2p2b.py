@@ -1,7 +1,7 @@
 # a2p2b.py
 # CO 487 - Assignment 2, Problem 2b
 # January 29, 2016
-# Description: Finds magnitude of bias given ciphertext
+# Description: Finds magnitude of bias given plaintext-ciphertext pairs stored in files
 # Collaborators: Kevin Rui Shen Chen, Cindy You
 
 
@@ -40,7 +40,7 @@ def getMagnitudeBias():
             la_list.append([u4[1], u4[3], u4[5], u4[7], plain_text_lines[plain_index][4], plain_text_lines[plain_index][6], plain_text_lines[plain_index][7]])
             plain_index+=1
         linApprox = calculateLinApprox(la_list)
-        if abs(10000-linApprox) > abs(10000-linApprox):
+        if abs(10000-linApprox) > abs(10000-mag_bias_lin_approx):
             mag_bias_lin_approx = linApprox
             mag_bias_key = partial_key_string
         print "partial key: " + partial_key_string + " Linear Approximation:" + str(linApprox) + "/20000"
